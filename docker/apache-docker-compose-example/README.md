@@ -1,3 +1,5 @@
+## This is an example of how to use Docker Compose to run a website from a Docker container
+
 1. First you need to have docker and git installed on your VM.
 2. Clone this repo :` git clone https://github.com/lucasgarciadev22/DevOps.git`
 3. In the repo directory apache-docker-compose-example you must install Docker Compose: `apt install docker-compose`
