@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+  name: local
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 100Mi
+  acessModes:
+    - ReadWriteOnce
+  hostPath: /<dbdir>/

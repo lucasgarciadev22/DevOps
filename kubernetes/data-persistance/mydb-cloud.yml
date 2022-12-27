@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: 
+  name: pvc-gcp
+spec:
+  capacity:
+    storage: 100Mi
+  acessModes:
+    - ReadWriteOnce
+  resources: 
+    storage: 100Mi
+  storageClassName: standard-rwo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - image: mysql:5.6
+        name: mysql
+        env:
+          # Use secret in real usage
+        - name: MYSQL_ROOT_PASSWORD
+          value: Pass123
+        - name: MYSQL_DATABASE
+          value: <dbdir>
+        ports:
+        - containerPort: 3306
+          name: mysql
+        
+        volumeMounts:
+        - name: pvc-gcp
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: pvc-gcp
+        persistentVolumeClaim:
+          claimName: pvc-gcp
+        # hostPath:
+        #   path: /<dbdir>/
