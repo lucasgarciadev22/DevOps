@@ -3,12 +3,11 @@ kind: PersistentVolumeClaim
 metadata: 
   name: pvc-gcp
 spec:
-  capacity:
-    storage: 100Mi
   acessModes:
     - ReadWriteOnce
   resources: 
-    storage: 100Mi
+    requests:
+      storage: 100Mi
   storageClassName: standard-rwo
 
 ---
