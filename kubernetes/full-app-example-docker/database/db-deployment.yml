@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: denilsonbonatti/mysqldb:1.0
+        image: lucasgarciadev22/mysqldb:1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 3306

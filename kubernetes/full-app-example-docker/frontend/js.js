@@ -11,7 +11,7 @@ $("#btn_save").on("click", function() {
             $("#answer").html("Sending data...");
         }
     }).done(function(e) {
-        $("#answer").html("Data saved...");
+        $("#answer").html("Data saved.");
     })
 
 })

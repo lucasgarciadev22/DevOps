@@ -1,12 +1,12 @@
 <?
 header("Access-Control-Allow-Origin: *");
-include 'conexao.php';
+include 'connection.php';
 
 $id =  rand(1, 999);
-$nome = $_POST["nome"];
-$mensagem = $_POST["mensagem"];
+$userName = $_POST["userName"];
+$userMessage = $_POST["userMessage"];
 
-$query = "INSERT INTO mensagens(id, nome, mensagem) VALUES ('$id', '$nome', '$mensagem')";
+$query = "INSERT INTO messages(id, userName, userMessage) VALUES ('$id', '$userName', '$userMessage')";
 
 
 if ($link->query($query) === TRUE) {

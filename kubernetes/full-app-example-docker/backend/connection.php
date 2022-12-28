@@ -3,7 +3,7 @@
 $servername = "mysql-connection";
 $username = "root";
 $password = "Pass123";
-$database = "meubanco";
+$database = "mysqldb";
 
 // Criar conexão
 

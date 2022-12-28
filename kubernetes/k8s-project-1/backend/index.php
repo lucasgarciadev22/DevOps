@@ -9,7 +9,7 @@ $userName = $_POST["userName"];
 $email = $_POST["email"];
 $comment = $_POST["comment"];
 
-$query = "INSERT INTO mensagens(id, userName, email, comment) VALUES ('$id', '$userName', '$email', '$comment')";
+$query = "INSERT INTO messages(id, userName, email, comment) VALUES ('$id', '$userName', '$email', '$comment')";
 
 
 if ($link->query($query) === TRUE) {
