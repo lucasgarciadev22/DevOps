@@ -1,3 +1,5 @@
+#!bin/bash
+
 echo "Building images..."
 
 docker build -t lucasgarciadev22/backend-project:1.0

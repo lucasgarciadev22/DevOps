@@ -16,6 +16,6 @@ spec:
         spec:
           containers:
           - name: app-html
-            image: httpd: <user>my-custom-docker-image:1.0
+            image: httpd:<user>my-custom-docker-image:1.0
             ports: 
           - containerPort: 80
