@@ -18,5 +18,5 @@ spec:
         name: php
         ports:
         - containerPort: 80
-
+          name: php
       
