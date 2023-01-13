@@ -11,31 +11,32 @@ This is a modified exercise from DIO AWS DevOps Bootcamps
 
 **Commands:**
 ```yaml
-- _sudo yum install -y aws-kinesis-agent_
-  - _sudo yum install -y git_
-  - _git clone https://github.com/cassianobrexbit/dio-live-aws-bigdata-2.git_
-  - _unzip Dataset.zip_
-  - _chmod a+x LogGenerator.py_
-  - _nano LogGenerator.py_
-  - _less country_vaccinations.csv_
-  - _sudo mkdir /var/log/diolive_
-  - _cd /etc/aws-kinesis_
-  - _sudo nano agent.json_
+  - sudo yum install -y aws-kinesis-agent
+  - sudo yum install -y git
+  - git clone https://github.com/lucasgarciadev22/AWSTests.git
+  - unzip Dataset.zip
+  - chmod a+x LogGenerator.py
+  - sudo nano LogGenerator.py
+  - less country_vaccinations.csv
+  - sudo mkdir /var/log/deliveryStreamLogs
+  - cd /etc/aws-kinesis
+  - sudo nano agent.json
 ``` 
 
-**   Update contents inside agent.json. Like the region of our kinesis instance, edit the flows and specify the fields inside the input CSV **
+**Update contents inside agent.json. Like the region of our kinesis instance, edit the flows and specify the fields inside the input CSV**
 `  - agent.json -> "kinesis.endpoint": "kinesis.<region>.amazonaws.com"`
 ![editing kinesis agent.json](img/edit-agent.png)
 
 ** Created a new IAM Role for my EC2:** 
 - AWS Console -> EC2 -> Instances -> Select Instance -> Security -> Modify IAM Role -> Create New Role -> EC2 -> Administrator Access -> rolename “ec2-admin-role” -> save
+
 **Commands:**
  ```yaml
-- _sudo service aws-kinesis-agent start_
-  - _sudo chkconfig aws-kinesis-agent on_ (start with instance)
-  - _cd ~_
-  - _sudo ./LogGenerator.py <quantity of registries>_
-  - _tail -f /var/log/aws-kinesis-agent/aws-kinesis-agent.log_
+  - sudo service aws-kinesis-agent start_
+  - sudo chkconfig aws-kinesis-agent on_ (start with instance)
+  - cd <repo dir>
+  - sudo ./LogGenerator.py <quantity of registries>
+  - tail -f /var/log/aws-kinesis-agent/aws-kinesis-agent.log_
 ```
 #### Finally our data streams were saved into the bucket. We can check this  in the AWS console and download. It can be opened with notepad.
 #### Now when we download the data from the S3 Bucket that received the Data Stream, we will see the log, but it's not in a good shape, need to be treated so que can examine and monitor it better. For this, we will use AWS Glue Data Brew
