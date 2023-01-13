@@ -5,7 +5,7 @@
   "flows" : [
     {
       "filePattern": "/var/log/diolive/*.log",
-      "kinesisStream": "VaccinesStream",
+      "kinesisStream": "VaccinesStreamLogs",
       "partitionKeyOption": "RANDOM",
       "dataProcessingOptions": [
         {
