@@ -25,9 +25,11 @@ This is a modified exercise from DIO AWS DevOps Bootcamps
 
 **Update contents inside agent.json. Like the region of our kinesis instance, edit the flows and specify the fields inside the input CSV**
 `  - agent.json -> "kinesis.endpoint": "kinesis.<region>.amazonaws.com"`
+
+
 ![editing kinesis agent.json](img/edit-agent.png)
 
-** Created a new IAM Role for my EC2:** 
+**Created a new IAM Role for my EC2:** 
 - AWS Console -> EC2 -> Instances -> Select Instance -> Security -> Modify IAM Role -> Create New Role -> EC2 -> Administrator Access -> rolename “ec2-admin-role” -> save
 
 **Commands:**
